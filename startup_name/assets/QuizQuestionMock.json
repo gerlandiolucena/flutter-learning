@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "question": "Name Harry Potter's parents",
+    "answers": [
+      {
+        "id": 1,
+        "correct": true,
+        "answer": "Lily & James"
+      },
+      {
+        "id": 2,
+        "answer": "Maria & Luiz"
+      },
+      {
+        "id": 3,
+        "answer": "Hariana & Ricardo"
+      },
+      {
+        "id": 4,
+        "answer": "Julia & Dunbledore"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What is the name of Harry Potter's owl?",
+    "answers": [
+      {
+        "id": 1,
+        "answer": "White Wings"
+      },
+      {
+        "id": 2,
+        "correct": true,
+        "answer": "Hedwig"
+      },
+      {
+        "id": 3,
+        "answer": "Lilian"
+      },
+      {
+        "id": 4,
+        "answer": "Molly"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Which actor played the character Bellatrix Lestrange?",
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Katharine Hepburn"
+      },
+      {
+        "id": 2,
+        "answer": "Shirley MacLaine"
+      },
+      {
+        "id": 3,
+        "answer": "Meryl Streep"
+      },
+      {
+        "id": 4,
+        "correct": true,
+        "answer": "Helena Bonham Carter"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Who did Ron Weasley's pet rat used to belong to?",
+    "answers": [
+      {
+        "id": 1,
+        "answer": "George"
+      },
+      {
+        "id": 2,
+        "answer": "Fred"
+      },
+      {
+        "id": 3,
+        "answer": "Percy"
+      },
+      {
+        "id": 4,
+        "answer": "Charlie "
+      }
+    ]
+  }
+]
