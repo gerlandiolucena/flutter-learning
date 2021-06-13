@@ -2,7 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:startup_name/Models/QuizQuestions.dart';
+import 'package:quiz_app/Models/QuizQuestions.dart';
 
 // ignore: must_be_immutable
 class Question extends StatelessWidget {
@@ -18,6 +18,7 @@ class Question extends StatelessWidget {
         Container(
           child: Text(
               question.question,
+              textAlign: TextAlign.center,
               style: TextStyle(
                   fontFamily: "Roboto",
                   fontSize: 18,

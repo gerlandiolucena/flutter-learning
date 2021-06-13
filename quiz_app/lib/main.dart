@@ -1,9 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
-import 'package:startup_name/HomePage/HomePage.dart';
-import 'package:startup_name/Models/QuizQuestions.dart';
+import 'package:quiz_app/Models/QuizQuestions.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:io';
 
