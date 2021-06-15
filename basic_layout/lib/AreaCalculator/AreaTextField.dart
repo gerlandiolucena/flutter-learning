@@ -9,7 +9,8 @@ class AreaTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
+        child: Container(
         margin: EdgeInsets.all(15.0),
         child:TextField(
           controller: controller,
@@ -20,12 +21,13 @@ class AreaTextField extends StatelessWidget {
               fontSize: 24.0
           ),
           decoration: InputDecoration(
-            prefixIcon: Icon(Icons.border_all),
+            prefixIcon: hint == "Width" ? Icon(Icons.border_bottom) : Icon(Icons.border_left),
             filled: true,
-            fillColor: Colors.grey[300],
+            fillColor: Colors.transparent,
             hintText: hint,
 
           ),
+        )
         )
     );
   }

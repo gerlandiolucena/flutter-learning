@@ -2,6 +2,8 @@ import 'package:basic_layout/AreaCalculator/AreaTextField.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'ShapeContainer.dart';
+
 class AreaCalculatorPage extends StatefulWidget {
   @override
   _AreaCalculatorState createState() => _AreaCalculatorState();
@@ -51,9 +53,8 @@ class _AreaCalculatorState extends State<AreaCalculatorPage> {
                   currentShape = shape ?? '';
                 });
               }),
-          //width
+          ShapeContainer(shape: currentShape),
           AreaTextField(controller: widthController, hint: 'Width'),
-          //height
           AreaTextField(controller: heightController, hint: 'Height'),
           Container(
             margin: EdgeInsets.all(15.0),
@@ -112,3 +113,4 @@ class _AreaCalculatorState extends State<AreaCalculatorPage> {
     });
   }
 }
+
