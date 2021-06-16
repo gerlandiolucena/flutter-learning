@@ -11,12 +11,12 @@ class AreaCalculatorPage extends StatefulWidget {
 
 class _AreaCalculatorState extends State<AreaCalculatorPage> {
   List<String> shapes = ['Rectangle', 'Triangle'];
-  
+
   String currentShape = 'Rectangle';
   String result = '0';
   double width = 0;
   double height = 0;
-  
+
   final TextEditingController widthController = TextEditingController();
   final TextEditingController heightController = TextEditingController();
 
@@ -33,47 +33,53 @@ class _AreaCalculatorState extends State<AreaCalculatorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        title: Text("Containers"),
-    ),
-    body: Container(
-        margin:EdgeInsets.only(top:15.0),
-        child: Column(children: <Widget>[
-          //dropdown
-          DropdownButton<String>(
-              value:currentShape,
-              items:shapes.map((String value) {
-                return new DropdownMenuItem<String>(
-                  value:value,
-                  child: Text(value,
-                    style: TextStyle(fontSize: 24.0),),
-                );
-              }).toList(),
-              onChanged:(shape){
-                setState(() {
-                  currentShape = shape ?? '';
-                });
-              }),
-          ShapeContainer(shape: currentShape),
-          AreaTextField(controller: widthController, hint: 'Width'),
-          AreaTextField(controller: heightController, hint: 'Height'),
-          Container(
-            margin: EdgeInsets.all(15.0),
-            child:ElevatedButton(
-              child:Text('Calculate Area',
-                style: TextStyle(fontSize: 18.0),),
-              //color: Colors.lightBlue,
-              onPressed: calculateArea,
-            )
-            ,
-          ),
-          Text(result,
-            style: TextStyle(
-              fontSize: 24.0,
-              color: Colors.green[700],
-            ),),
-        ],)
-    )
-    );
+          title: Text("Containers"),
+        ),
+        body: Container(
+          margin: EdgeInsets.only(top: 15.0),
+          child: SingleChildScrollView(
+              child: Column(
+            children: <Widget>[
+              DropdownButton<String>(
+                  value: currentShape,
+                  items: shapes.map((String value) {
+                    return new DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(
+                        value,
+                        style: TextStyle(fontSize: 24.0),
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (shape) {
+                    setState(() {
+                      currentShape = shape ?? '';
+                    });
+                  }),
+              ShapeContainer(shape: currentShape),
+              AreaTextField(controller: widthController, hint: 'Width'),
+              AreaTextField(controller: heightController, hint: 'Height'),
+              Container(
+                margin: EdgeInsets.all(15.0),
+                child: ElevatedButton(
+                  child: Text(
+                    'Calculate Area',
+                    style: TextStyle(fontSize: 18.0),
+                  ),
+                  //color: Colors.lightBlue,
+                  onPressed: calculateArea,
+                ),
+              ),
+              Text(
+                result,
+                style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.green[700],
+                ),
+              ),
+            ],
+          )),
+        ));
   }
 
   calculateArea() {
@@ -81,11 +87,9 @@ class _AreaCalculatorState extends State<AreaCalculatorPage> {
 
     if (currentShape == 'Rectangle') {
       area = width * height;
-    }
-    else if (currentShape == 'Triangle') {
+    } else if (currentShape == 'Triangle') {
       area = width * height / 2;
-    }
-    else {
+    } else {
       area = 0;
     }
     setState(() {
@@ -95,7 +99,7 @@ class _AreaCalculatorState extends State<AreaCalculatorPage> {
 
   updateWidht() {
     setState(() {
-      if(widthController.text != '') {
+      if (widthController.text != '') {
         width = double.parse(widthController.text);
       } else {
         width = 0;
@@ -105,7 +109,7 @@ class _AreaCalculatorState extends State<AreaCalculatorPage> {
 
   updateHeight() {
     setState(() {
-      if(heightController.text != '') {
+      if (heightController.text != '') {
         height = double.parse(heightController.text);
       } else {
         height = 0;
@@ -113,4 +117,3 @@ class _AreaCalculatorState extends State<AreaCalculatorPage> {
     });
   }
 }
-

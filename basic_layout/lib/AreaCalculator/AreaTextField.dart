@@ -9,8 +9,7 @@ class AreaTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-        child: Container(
+    return Container(
         margin: EdgeInsets.all(15.0),
         child:TextField(
           controller: controller,
@@ -27,7 +26,6 @@ class AreaTextField extends StatelessWidget {
             hintText: hint,
 
           ),
-        )
         )
     );
   }
