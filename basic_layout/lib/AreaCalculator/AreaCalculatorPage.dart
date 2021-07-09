@@ -39,47 +39,49 @@ class _AreaCalculatorState extends State<AreaCalculatorPage> {
           margin: EdgeInsets.only(top: 15.0),
           child: SingleChildScrollView(
               child: Column(
-            children: <Widget>[
-              DropdownButton<String>(
-                  value: currentShape,
-                  items: shapes.map((String value) {
-                    return new DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(
-                        value,
-                        style: TextStyle(fontSize: 24.0),
-                      ),
-                    );
-                  }).toList(),
-                  onChanged: (shape) {
-                    setState(() {
-                      currentShape = shape ?? '';
-                    });
-                  }),
-              ShapeContainer(shape: currentShape),
-              AreaTextField(controller: widthController, hint: 'Width'),
-              AreaTextField(controller: heightController, hint: 'Height'),
-              Container(
-                margin: EdgeInsets.all(15.0),
-                child: ElevatedButton(
-                  child: Text(
-                    'Calculate Area',
-                    style: TextStyle(fontSize: 18.0),
+                children: <Widget>[
+                DropdownButton<String>(
+                    value: currentShape,
+                    items: shapes.map((String value) {
+                      return new DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(fontSize: 24.0),
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (shape) {
+                      setState(() {
+                        currentShape = shape ?? '';
+                      });
+                    }),
+                ShapeContainer(shape: currentShape),
+                AreaTextField(controller: widthController, hint: 'Width'),
+                AreaTextField(controller: heightController, hint: 'Height'),
+                Container(
+                  margin: EdgeInsets.all(15.0),
+                  child: ElevatedButton(
+                    child: Text(
+                      'Calculate Area',
+                      style: TextStyle(fontSize: 18.0),
+                    ),
+                    //color: Colors.lightBlue,
+                    onPressed: calculateArea,
                   ),
-                  //color: Colors.lightBlue,
-                  onPressed: calculateArea,
                 ),
-              ),
-              Text(
-                result,
-                style: TextStyle(
-                  fontSize: 24.0,
-                  color: Colors.green[700],
+                Text(
+                  result,
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    color: Colors.green[700],
+                  ),
                 ),
-              ),
-            ],
-          )),
-        ));
+              ],
+            )
+          ),
+        )
+    );
   }
 
   calculateArea() {

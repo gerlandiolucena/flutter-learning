@@ -1,6 +1,9 @@
 import 'package:expenses_helper/Theme/Colors/Colors.dart';
+import 'package:expenses_helper/UIComponents/Rows/ExpensesCard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'Entity/Expense.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,7 +43,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
+    List<Expense> expenses = [
+      Expense(1, "Description", 240.00, "value"),
+      Expense(1, "Description", 240.00, "value"),
+      Expense(1, "Description", 240.00, "value"),
+      Expense(1, "Description", 240.00, "value"),
+      Expense(1, "Description", 240.00, "value"),
+      Expense(1, "Description", 240.00, "value"),
+      Expense(1, "Description", 240.00, "value"),
+      Expense(1, "Description", 240.00, "value"),
+      Expense(1, "Description", 240.00, "value"),
+      Expense(1, "Description", 240.00, "value")
+    ];
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -57,49 +71,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 elevation: 5,
               ),
             ),
-            Card(
-              child: Row(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(22)),
-                      color: ColorTheme.purple,
-                    ),
-                    child: Center(
-                      child: Text("65.5",
-                        style: TextStyle(
-                          color: ColorTheme.white,
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                    ),
-                    margin: EdgeInsets.all(10),
-                    height: 44,
-                    width: 44,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        child: Text("Description",
-                            style: TextStyle(
-                                color: ColorTheme.dark,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold
-                            ),
-                        ),
-                      ),
-                      Container(
-                        child: Text("Element",
-                          style: TextStyle(
-                              color: ColorTheme.grey
-                          ),
-                        ),
-                      )],
-                  )
-                ],
-              ),)
+            SingleChildScrollView(
+              child: ListView.builder(
+                  padding: const EdgeInsets.all(10.0),
+                  shrinkWrap: true,
+                  itemCount: expenses.length,
+                  itemBuilder: (context, i) {
+                    return ExpenseCard(expense: expenses[i]);
+                  }
+              ),
+            )
           ],
         ),
       ),
